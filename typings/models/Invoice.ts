@@ -10,23 +10,6 @@ import {
 import { IUserModelGraphql } from "./User";
 import { IJobModelGraphql } from "./Job";
 
-export type InvoicePDFRow = {
-  performedBy: string;
-  performedAt: string;
-  [key: string]: string | null;
-};
-
-export interface IInvoiceData {
-  categoryId: MongoId;
-  categoryName: string;
-  fields: {
-    fieldId: MongoId;
-    name: string;
-    uiElement: FieldUIElement;
-  }[];
-  data: Array<Array<InvoicePDFRow>>;
-}
-
 export enum InvoiceType {
   BILL = "BILL",
   PAY = "PAY",
@@ -45,7 +28,22 @@ export interface IInvoice extends Id, CustomerId, GroupId, Active {
   preview: boolean;
   withPerformedBy: boolean;
   withDate: boolean;
-  data: IInvoiceData[];
+  data: {
+    categoryId: MongoId;
+    categoryName: string;
+    fields: {
+      fieldId: MongoId;
+      name: string;
+      uiElement: FieldUIElement;
+    }[];
+    data: Array<
+      Array<{
+        performedBy: string;
+        performedAt: string;
+        [key: string]: string | null;
+      }>
+    >;
+  }[];
   jobIds: MongoId[];
   archived: boolean;
   accessToken: string;

@@ -3,13 +3,6 @@ import { Id, Active, Contact, Adress } from "./shared";
 import { MongoId } from "../MongoId";
 import { SummerizationTimes, SummerizationModules } from "../enums";
 
-export interface GroupBillingInformation extends Adress, Contact {
-  website: string;
-  organisation: string;
-}
-
-export interface GroupContactInformation extends Adress, Contact {}
-
 export interface IGroupUser extends Id {
   userId: MongoId;
   employed: boolean;
@@ -21,8 +14,12 @@ export interface IGroupUser extends Id {
 export interface IGroup extends Id, Active, Contact {
   name: string;
   oid: string;
-  billingInformation: GroupBillingInformation;
-  contactInformation: GroupContactInformation;
+  billingInformation: {
+    website: string;
+    organisation: string;
+  } & Adress &
+    Contact;
+  contactInformation: Adress & Contact;
   extrasInformation: any;
   inviteCode: string;
   _users: IGroupUser[];
