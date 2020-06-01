@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/hasseboulen/wlogga-types/issues"
   },
-  "homepage": "https://github.com/hasseboulen/wlogga-types#readme"
+  "homepage": "https://github.com/hasseboulen/wlogga-types#readme",
+  "dependencies": {
+    "@types/node": "^14.0.6",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.16"
+  }
 }
