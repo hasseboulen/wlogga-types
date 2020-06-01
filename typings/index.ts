@@ -1,6 +1,7 @@
 import {
   ViewStateColumns,
   ViewStateJobQuery,
+  ICategoryViewState,
   ICategory,
   ICategoryModel,
   ICategoryModelGraphql,
@@ -66,6 +67,7 @@ export {
   ViewStateColumns,
   ViewStateJobQuery,
   ICategory,
+  ICategoryViewState,
   ICategoryModel,
   ICategoryModelGraphql,
   ICustomer,
