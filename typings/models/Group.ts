@@ -3,12 +3,12 @@ import { Id, Active, Contact, Adress } from "./shared";
 import { MongoId } from "../MongoId";
 import { SummerizationTimes, SummerizationModules } from "../enums";
 
-interface GroupBillingInformation extends Adress, Contact {
+export interface GroupBillingInformation extends Adress, Contact {
   website: string;
   organisation: string;
 }
 
-interface GroupContactInformation extends Adress, Contact {}
+export interface GroupContactInformation extends Adress, Contact {}
 
 export interface IGroupUser extends Id {
   userId: MongoId;

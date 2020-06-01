@@ -15,8 +15,10 @@ import {
   JobPermissionLevel,
 } from "../enums";
 
-type ViewStateColumns = { [x in JobColumn]: boolean } & { __typename: string };
-type ViewStateJobQuery = { [x in JobQueryColumn]: boolean | null } & {
+export type ViewStateColumns = { [x in JobColumn]: boolean } & {
+  __typename: string;
+};
+export type ViewStateJobQuery = { [x in JobQueryColumn]: boolean | null } & {
   __typename: string;
   from: string;
 };
