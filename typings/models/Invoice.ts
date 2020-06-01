@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Id, Active, GroupId, CustomerId } from "./shared";
 import { MongoId } from "../MongoId";
 import { ICustomerModelGraphql } from "./Customer";
@@ -56,7 +56,7 @@ export interface IInvoice extends Id, CustomerId, GroupId, Active {
   billed: boolean;
 }
 
-export interface IInvoiceModel extends IInvoice, Document {}
+export interface IInvoiceModel extends IInvoice {}
 export interface IInvoiceModelGraphql extends IInvoiceModel {
   customer: ICustomerModelGraphql | null;
   user: IUserModelGraphql | null;

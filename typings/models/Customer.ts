@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import {
   Id,
   Active,
@@ -26,7 +26,7 @@ export interface ICustomer
   defaultSummerizationTime: SummerizationTimes;
 }
 
-export interface ICustomerModel extends ICustomer, Document {}
+export interface ICustomerModel extends ICustomer {}
 export interface ICustomerModelGraphql extends ICustomerModel {
   _edit: boolean;
   _remove: boolean;

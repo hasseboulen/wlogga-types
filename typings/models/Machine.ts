@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Id, Active, Timestamps, GroupId, ActiveInCategories } from "./shared";
 import { ICategoryModelGraphql } from "./Category";
 
@@ -19,7 +19,7 @@ export interface IMachine
   service: IMachineService[];
 }
 
-export interface IMachineModel extends IMachine, Document {}
+export interface IMachineModel extends IMachine {}
 export interface IMachineModelGraphql extends IMachineModel {
   categories: ICategoryModelGraphql[];
 }

@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Moment } from "moment";
 import { Id, Timestamps, GroupId, CustomerId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
@@ -52,11 +52,10 @@ export interface IJob extends Id, CategoryId, CustomerId, GroupId, Timestamps {
   archivedBy: MongoId;
 }
 
-export interface IJobModel extends IJob, Document {}
+export interface IJobModel extends IJob {}
 export interface IJobForm extends Partial<IJobModel> {
   date: Date;
-  fieldValues: [];
-  [key: string]: any;
+  fieldValues: IJobFieldValue[];
 }
 
 export interface IJobModelGraphql extends IJobModel {

@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import {
   Id,
   Active,
@@ -35,7 +35,7 @@ export interface IPrintTemplate
   _fields: IPrintTemplateSubField[];
 }
 
-export interface IPrintTemplateModel extends IPrintTemplate, Document {}
+export interface IPrintTemplateModel extends IPrintTemplate {}
 export interface IPrintTemplateModelGraphql extends IPrintTemplateModel {
   _edit: boolean;
   _remove: boolean;

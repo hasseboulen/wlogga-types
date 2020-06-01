@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Id, GroupId } from "./shared";
 import { MongoId } from "../MongoId";
 import { IInvoiceModelGraphql } from "./Invoice";
@@ -33,7 +33,7 @@ export interface IUser extends Id {
   locale: string;
 }
 
-export interface IUserModel extends IUser, Document {}
+export interface IUserModel extends IUser {}
 
 export interface IUserModelGraphql extends IUserModel, IGroupUser {
   _edit: boolean;

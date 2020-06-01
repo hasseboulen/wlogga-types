@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Id, Active, Timestamps, GroupId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
 import { IUserModelGraphql } from "./User";
@@ -19,7 +19,7 @@ export interface IUserGroup extends GroupId, Active, Timestamps, Id {
   categoryPermissions: CategoryPermissions[];
 }
 
-export interface IUserGroupModel extends IUserGroup, Document {}
+export interface IUserGroupModel extends IUserGroup {}
 export interface IUserGroupModelGraphql extends IUserGroupModel {
   _edit: boolean;
   _remove: boolean;

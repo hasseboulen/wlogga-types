@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import {
   Id,
   Active,
@@ -107,7 +107,7 @@ export interface IField
   _fields: IFieldSubField[];
 }
 
-export interface IFieldModel extends IField, Document {}
+export interface IFieldModel extends IField {}
 export interface IFieldModelGraphql extends IFieldModel {
   _edit: boolean;
   _remove: boolean;

@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Id, Active, Contact, Adress } from "./shared";
 import { MongoId } from "../MongoId";
 import { SummerizationTimes, SummerizationModules } from "../enums";
@@ -30,7 +30,7 @@ export interface IGroup extends Id, Active, Contact {
   defaultUserSummerizationModule: SummerizationModules;
 }
 
-export interface IGroupModel extends IGroup, Document {}
+export interface IGroupModel extends IGroup {}
 
 export interface IGroupModelGraphql extends IGroupModel {
   _edit: boolean;

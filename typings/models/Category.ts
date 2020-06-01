@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+// import { Document } from "mongoose";
 import { Active, Position, Timestamps, GroupId, Id } from "./shared";
 import { MongoId } from "../MongoId";
 import { IFieldModelGraphql } from "./Field";
@@ -80,7 +80,7 @@ export interface ICategory extends Id, Position, Active, Timestamps, GroupId {
   maintenanceWeekends: boolean;
 }
 
-export interface ICategoryModel extends ICategory, Document {}
+export interface ICategoryModel extends ICategory {}
 
 export interface ICategoryModelGraphql extends ICategoryModel {
   _edit: boolean;
