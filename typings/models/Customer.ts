@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import {
   Id,
   Active,
@@ -18,7 +18,8 @@ export interface ICustomer
     Timestamps,
     GroupId,
     ActiveInCategories,
-    Contact {
+    Contact,
+    Document {
   name: string;
   allowSMS: boolean;
   cId: string;

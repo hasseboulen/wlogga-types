@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Id, Active, Contact, Adress } from "./shared";
 import { MongoId } from "../MongoId";
 import { SummerizationTimes, SummerizationModules } from "../enums";
@@ -11,7 +11,7 @@ export interface IGroupUser extends Id {
   active: boolean;
 }
 
-export interface IGroup extends Id, Active, Contact {
+export interface IGroup extends Id, Active, Contact, Document {
   name: string;
   oid: string;
   billingInformation: {

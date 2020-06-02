@@ -1,3 +1,4 @@
+import { Document } from "mongoose";
 import { Id, Active, Timestamps, GroupId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
 import { SummerizationTimes, SummerizationModules } from "../enums";
@@ -9,7 +10,8 @@ export interface IPrintTemplate
     Active,
     Timestamps,
     GroupId,
-    CategoryId {
+    CategoryId,
+    Document {
   name: string;
   title: string;
   description: string;
@@ -17,7 +19,7 @@ export interface IPrintTemplate
   summerizationModule: SummerizationModules;
   withPerformedBy: boolean;
   withDate: boolean;
-  _fields: { fieldId: MongoId } & Id[];
+  fieldIds: MongoId[];
 }
 
 export interface IPrintTemplateModel extends IPrintTemplate {}

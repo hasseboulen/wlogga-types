@@ -17,7 +17,7 @@ import {
 import { IUserModelGraphql } from "./models/User";
 import { IUserGroupModelGraphql, IUserGroupModel } from "./models/UserGroup";
 
-export interface Mutations {
+export default interface Mutations {
   categoryCreate: {
     response: ICategoryModelGraphql;
     variables: {

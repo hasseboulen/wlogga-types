@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Id, Active, GroupId, CustomerId } from "./shared";
 import { MongoId } from "../MongoId";
 import { ICustomerModelGraphql } from "./Customer";
@@ -15,7 +15,26 @@ export enum InvoiceType {
   PAY = "PAY",
 }
 
-export interface IInvoice extends Id, CustomerId, GroupId, Active {
+export type IInvoiceData = {
+  categoryId: MongoId;
+  categoryName: string;
+  fields: {
+    fieldId: MongoId;
+    name: string;
+    uiElement: FieldUIElement;
+  }[];
+  data: IInvoicePDFRow;
+}[];
+
+export type IInvoicePDFRow = Array<
+  Array<{
+    performedBy: string;
+    performedAt: string;
+    [key: string]: string | null;
+  }>
+>;
+
+export interface IInvoice extends Id, CustomerId, GroupId, Active, Document {
   oid: string;
   module: SummerizationModules;
   moduleName: string;
@@ -28,22 +47,7 @@ export interface IInvoice extends Id, CustomerId, GroupId, Active {
   preview: boolean;
   withPerformedBy: boolean;
   withDate: boolean;
-  data: {
-    categoryId: MongoId;
-    categoryName: string;
-    fields: {
-      fieldId: MongoId;
-      name: string;
-      uiElement: FieldUIElement;
-    }[];
-    data: Array<
-      Array<{
-        performedBy: string;
-        performedAt: string;
-        [key: string]: string | null;
-      }>
-    >;
-  }[];
+  data: IInvoiceData;
   jobIds: MongoId[];
   archived: boolean;
   accessToken: string;

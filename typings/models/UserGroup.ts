@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Id, Active, Timestamps, GroupId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
 import { IUserModelGraphql } from "./User";
@@ -12,7 +12,7 @@ export interface CategoryPermissionsWithName extends CategoryPermissions {
   name: string;
 }
 
-export interface IUserGroup extends GroupId, Active, Timestamps, Id {
+export interface IUserGroup extends GroupId, Active, Timestamps, Id, Document {
   name: string;
   description: string;
   userIds: MongoId[];

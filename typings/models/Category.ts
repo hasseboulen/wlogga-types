@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Active, Position, Timestamps, GroupId, Id } from "./shared";
 import { MongoId } from "../MongoId";
 import { IFieldModelGraphql } from "./Field";
@@ -64,7 +64,13 @@ export interface ICategoryViewState {
   };
 }
 
-export interface ICategory extends Id, Position, Active, Timestamps, GroupId {
+export interface ICategory
+  extends Id,
+    Position,
+    Active,
+    Timestamps,
+    GroupId,
+    Document {
   oid: string;
   oldId: string;
   name: string;

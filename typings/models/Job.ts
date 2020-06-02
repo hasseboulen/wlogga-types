@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Moment } from "moment";
 import { Id, Timestamps, GroupId, CustomerId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
@@ -22,7 +22,13 @@ export interface IJobFieldValue extends Id {
   // JobId: string;
 }
 
-export interface IJob extends Id, CategoryId, CustomerId, GroupId, Timestamps {
+export interface IJob
+  extends Id,
+    CategoryId,
+    CustomerId,
+    GroupId,
+    Timestamps,
+    Document {
   RID: number;
   fieldValues: IJobFieldValue[];
   date: Date;

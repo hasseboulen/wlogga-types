@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import { Id, GroupId } from "./shared";
 import { MongoId } from "../MongoId";
 import { IInvoiceModelGraphql } from "./Invoice";
@@ -12,7 +12,7 @@ export interface IUserGroupPermission extends Id, GroupId {
   isTestingPermissions: boolean;
 }
 
-export interface IUser extends Id {
+export interface IUser extends Id, Document {
   username: string;
   password: string;
   name: string;

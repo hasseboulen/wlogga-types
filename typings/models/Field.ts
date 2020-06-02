@@ -1,4 +1,4 @@
-// import { Document } from "mongoose";
+import { Document } from "mongoose";
 import {
   Id,
   Active,
@@ -70,7 +70,8 @@ export interface IField
     Active,
     Timestamps,
     CategoryId,
-    Position {
+    Position,
+    Document {
   name: string;
   description: string;
   uiElement: FieldUIElement;
