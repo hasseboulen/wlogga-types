@@ -70,7 +70,14 @@ export interface ICategory extends Id, Position, Active, Timestamps, GroupId, Do
 	payByFieldId: MongoId;
 	groupJobsByDays: number;
 	jobCount: number;
-	medians: { optionId: MongoId; value: any }[];
+	medians: {
+		optionId: MongoId;
+		value: any;
+		fields: {
+			fieldId: MongoId;
+			value: any;
+		}[];
+	}[];
 	maintenance: boolean;
 	maintenanceInterval: number;
 	maintenanceWeekends: boolean;
