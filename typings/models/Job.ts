@@ -1,5 +1,6 @@
 import { Document } from "mongoose";
 import { Moment } from "moment";
+import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import { Id, Timestamps, GroupId, CustomerId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
 import { ICustomerModelGraphql } from "./Customer";
@@ -25,7 +26,7 @@ export interface IJobFieldValue extends Id {
 export interface IJob extends Id, CategoryId, CustomerId, GroupId, Timestamps, Document {
 	RID: number;
 	fieldValues: IJobFieldValue[];
-	date: Date;
+	date: Date | MaterialUiPickersDate;
 
 	performed: boolean;
 	performedAt: Date;
@@ -54,7 +55,7 @@ export interface IJob extends Id, CategoryId, CustomerId, GroupId, Timestamps, D
 
 export interface IJobModel extends IJob {}
 export interface IJobForm extends Partial<IJobModel> {
-	date: Date;
+	date: Date | MaterialUiPickersDate;
 	fieldValues: IJobFieldValue[];
 }
 

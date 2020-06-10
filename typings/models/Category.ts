@@ -10,6 +10,7 @@ import { IJobModelGraphql } from "./Job";
 import { JobColumn, JobQueryColumn } from "../JobColumn";
 
 import { SummerizationModules, SummerizationTimes, JobPermissionLevel } from "../enums";
+import { IUserModelGraphql } from "..";
 
 export type ViewStateColumns = { [x in JobColumn]: boolean } & {
 	__typename: string;
@@ -102,4 +103,6 @@ export interface ICategoryModelGraphql extends ICategoryModel {
 	printTemplates: IPrintTemplateModelGraphql[];
 	jobs: IJobModelGraphql[];
 	viewState: ICategoryViewState;
+
+	users: IUserModelGraphql[];
 }
