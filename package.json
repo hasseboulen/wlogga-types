@@ -1,29 +1,29 @@
 {
-  "name": "@wlogga/types",
-  "version": "0.0.1",
-  "description": "Type-definitions for wlogga",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "prepublish": "tsc",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hasseboulen/wlogga-types.git"
-  },
-  "author": "Hans Ripa",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hasseboulen/wlogga-types/issues"
-  },
-  "homepage": "https://github.com/hasseboulen/wlogga-types#readme",
-  "dependencies": {
-    "@material-ui/pickers": "^3.2.10",
-    "@types/mongoose": "^5.7.21",
-    "@types/node": "^14.0.6",
-    "moment": "^2.26.0",
-    "mongoose": "^5.9.16",
-    "typescript": "^3.9.3"
-  }
+	"name": "@wlogga/types",
+	"version": "0.0.1",
+	"description": "Type-definitions for wlogga",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"prepublish": "tsc",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hasseboulen/wlogga-types.git"
+	},
+	"author": "Hans Ripa",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hasseboulen/wlogga-types/issues"
+	},
+	"homepage": "https://github.com/hasseboulen/wlogga-types#readme",
+	"dependencies": {
+		"@material-ui/pickers": "^3.2.10",
+		"@types/mongoose": "^5.7.21",
+		"@types/node": "^14.0.6",
+		"moment": "^2.26.0",
+		"mongoose": "^5.9.16",
+		"typescript": "^3.9.5"
+	}
 }
