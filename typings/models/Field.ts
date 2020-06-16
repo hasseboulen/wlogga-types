@@ -1,43 +1,10 @@
 import { Document } from "mongoose";
-import { Id, Active, Position, Timestamps, GroupId, CustomerId, CategoryId } from "./shared";
+import { Id, Active, Position, Timestamps, GroupId, CategoryId } from "./shared";
 import { MongoId } from "../MongoId";
-import { ICustomerModelGraphql } from "./Customer";
 import { FieldUIElement } from "../enums";
 import { ICategoryModelGraphql } from "./Category";
 import { IMachineModelGraphql } from "./Machine";
-
-export enum OptionPaidBy {
-	hour = "hour",
-	amount = "amount",
-}
-
-export enum FieldOptionLongevity {
-	INDEFINITELY = "INDEFINITELY",
-	TODAY = "TODAY",
-	MONTH = "MONTH",
-	THIS_MONTH = "THIS_MONTH",
-	YEAR = "YEAR",
-	THIS_YEAR = "THIS_YEAR",
-}
-
-export interface IFieldOptionGroup extends Id {
-	name: string;
-	// options: IFieldOption[];
-}
-
-export interface IFieldOption extends Id, Position, CustomerId, Active {
-	value: string;
-	label: string | null;
-	paidBy: OptionPaidBy;
-	optionGroupId: MongoId;
-	price: number;
-	articleNumber: string;
-	description: string;
-	activeStartDate: Date;
-	activeEndDate: Date;
-	lastUsed: Date;
-	customer?: ICustomerModelGraphql;
-}
+import { IFieldOptionGroupModelGraphql } from "./FieldOptionGroup";
 
 export enum SuggestionType {
 	AVERAGE = "AVERAGE",
@@ -86,8 +53,6 @@ export interface IField extends Id, GroupId, Active, Timestamps, CategoryId, Pos
 		showAsTooltip: boolean;
 		numberFormat: string;
 	};
-	options: IFieldOption[];
-	optionGroups: IFieldOptionGroup[];
 	defaultFirst: any;
 	defaultSecond: any;
 	_fields: IFieldSubField[];
@@ -97,6 +62,8 @@ export interface IFieldModel extends IField {}
 export interface IFieldModelGraphql extends IFieldModel {
 	_edit: boolean;
 	_remove: boolean;
+
+	optionGroups: IFieldOptionGroupModelGraphql[];
 
 	category: ICategoryModelGraphql | null;
 	machine: IMachineModelGraphql | null;
