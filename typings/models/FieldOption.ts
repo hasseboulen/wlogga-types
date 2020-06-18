@@ -28,6 +28,7 @@ export interface IFieldOption extends Id, Document, Active, GroupId, CustomerId 
 	activeEndDate: Date;
 	lastUsed: Date;
 	optionGroupId: MongoId;
+	customerId: MongoId;
 }
 
 export interface IFieldOptionModel extends IFieldOption {}

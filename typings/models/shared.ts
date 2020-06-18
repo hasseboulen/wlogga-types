@@ -2,6 +2,7 @@ import { MongoId } from "../MongoId";
 
 export interface Id {
 	_id: MongoId;
+	__typename?: string;
 }
 
 export interface GroupId {
