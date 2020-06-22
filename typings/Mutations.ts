@@ -12,7 +12,7 @@ import { IUserModelGraphql } from "./models/User";
 import { IUserGroupModelGraphql, IUserGroupModel } from "./models/UserGroup";
 import { MongoId } from "./MongoId";
 
-interface Mutation<Model, ExtendModel = {}> {
+export interface Mutation<Model, ExtendModel = {}> {
 	response: {
 		recordId: MongoId;
 		record: Model;
