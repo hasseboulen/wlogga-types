@@ -3,18 +3,19 @@ import { Id, GroupId } from "./shared";
 import { MongoId } from "../MongoId";
 import { IInvoiceModelGraphql } from "./Invoice";
 import { IGroupUser } from "./Group";
-import { IUserGroupModelGraphql } from "./UserGroup";
+import { IUserGroupModelGraphql, CategoryPermissionsWithName } from "./UserGroup";
+import { CategoryPermissions } from "..";
 
-export interface IUserGroupPermission extends Id, GroupId {
-	categoryIds: string[];
-	categoryPermissions: string[];
-	admin: Boolean;
+export interface IGroupPermission extends Id, GroupId {
+	categoryPermissions: CategoryPermissions[];
+	admin: boolean;
 	isTestingPermissions: boolean;
 }
 
 export interface IUser extends Id, Document {
 	username: string;
 	password: string;
+	passwordSalt: string;
 	name: string;
 	emails: { address: string; verified: Boolean }[];
 	createdAt: Date;
@@ -29,7 +30,7 @@ export interface IUser extends Id, Document {
 	};
 	services: any;
 	currentGroupId: MongoId;
-	permissions: IUserGroupPermission[];
+	permissions: IGroupPermission[];
 	locale: string;
 }
 
@@ -42,6 +43,7 @@ export interface IUserModelGraphql extends IUserModel, IGroupUser {
 
 	nonPaidSeconds: number;
 	avatar: any;
+	categoryPermissionsWithName: CategoryPermissionsWithName[];
 
 	isTestingPermissions: boolean;
 	invoices: IInvoiceModelGraphql[];
