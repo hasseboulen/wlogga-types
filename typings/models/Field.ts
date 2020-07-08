@@ -28,6 +28,7 @@ export interface IField extends Id, GroupId, Active, Timestamps, CategoryId, Pos
 	description: string;
 	uiElement: FieldUIElement;
 	validation: {
+		__typename?: string;
 		isInteger: boolean;
 		minValue: number;
 		maxValue: number;
@@ -43,6 +44,7 @@ export interface IField extends Id, GroupId, Active, Timestamps, CategoryId, Pos
 		customInput: boolean;
 	};
 	format: {
+		__typename?: string;
 		halfRow: boolean;
 		helpText: string;
 		showOnInsert: boolean;

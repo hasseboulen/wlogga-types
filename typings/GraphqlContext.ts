@@ -3,7 +3,7 @@ import { IUserModel } from "./models/User";
 import { IGroupModel } from "./models/Group";
 
 export default interface GraphqlContext {
-	user?: Pick<IUserModel, "_id" | "currentGroupId" | "permissions">;
+	user?: Pick<IUserModel, "_id" | "currentGroupId" | "permissions" | "locale">;
 	currentGroup?: Pick<IGroupModel, "_id" | "name" | "_users">;
 	groups?: Pick<IGroupModel, "_id" | "name" | "_users">[];
 	permissions?: UserPermissions;

@@ -15,6 +15,7 @@ export interface IGroup extends Id, Active, Contact, Document {
 	name: string;
 	oid: string;
 	billingInformation: {
+		__typename?: string;
 		website: string;
 		organisation: string;
 	} & Adress &

@@ -21,6 +21,7 @@ export interface IUser extends Id, Document {
 	createdAt: Date;
 	updatedAt: Date;
 	profile: {
+		__typename?: string;
 		firstName: string;
 		lastName: string;
 		birthday: Date;
@@ -32,6 +33,10 @@ export interface IUser extends Id, Document {
 	currentGroupId: MongoId;
 	permissions: IGroupPermission[];
 	locale: string;
+
+	token: string;
+	resetPasswordToken: string;
+	resetPasswordExpire: Date;
 }
 
 export interface IUserModel extends IUser {}

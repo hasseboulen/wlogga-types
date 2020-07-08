@@ -15,11 +15,12 @@ export type IInvoiceData = {
 	categoryId: MongoId;
 	categoryName: string;
 	fields: {
+		__typename?: string;
 		fieldId: MongoId;
 		name: string;
 		uiElement: FieldUIElement;
 	}[];
-	data: [IInvoicePDFRow[]];
+	tableData: [IInvoicePDFRow[]];
 };
 
 export type IInvoicePDFRow = {
