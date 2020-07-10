@@ -80,9 +80,16 @@ export interface ICategory extends Id, Position, Active, Timestamps, GroupId, Do
 			value: any;
 		}[];
 	}[];
+
 	maintenance: boolean;
 	maintenanceInterval: number;
 	maintenanceWeekends: boolean;
+}
+
+export interface ICategoryForm extends ICategory {
+	fields: { _id: string; position: number; name: string }[];
+	customerIds: string[];
+	machineIds: string[];
 }
 
 export interface ICategoryModel extends ICategory {}

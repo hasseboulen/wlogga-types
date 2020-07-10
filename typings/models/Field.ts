@@ -27,6 +27,7 @@ export interface IField extends Id, GroupId, Active, Timestamps, CategoryId, Pos
 	name: string;
 	description: string;
 	uiElement: FieldUIElement;
+	mainInput: boolean;
 	validation: {
 		__typename?: string;
 		isInteger: boolean;
