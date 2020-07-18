@@ -11,6 +11,15 @@ export enum JobColumn {
 	performed = "performed",
 }
 
+export enum JobStatusColumn {
+	paid = "paid",
+	billed = "billed",
+	examined = "examined",
+	archived = "archived",
+	validated = "validated",
+	performed = "performed",
+}
+
 export enum JobQueryColumn {
 	paid = "paid",
 	billed = "billed",

@@ -54,6 +54,7 @@ export interface IField extends Id, GroupId, Active, Timestamps, CategoryId, Pos
 		suggestionType: SuggestionType;
 		showOnManage: boolean;
 		showAsTooltip: boolean;
+		unit: string;
 		numberFormat: string;
 	};
 	defaultFirst: any;

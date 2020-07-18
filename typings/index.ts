@@ -86,7 +86,7 @@ import {
 	JobPermissionLevel,
 	FieldUIElement,
 } from "./enums";
-import { JobColumn, JobQueryColumn } from "./JobColumn";
+import { JobColumn, JobQueryColumn, JobStatusColumn } from "./JobColumn";
 import UserNotifications from "./UserNotifications";
 import UserPermissions from "./UserPermissions";
 
@@ -167,6 +167,7 @@ export {
 	JobPermissionLevel,
 	FieldUIElement,
 	JobColumn,
+	JobStatusColumn,
 	JobQueryColumn,
 	UserNotifications,
 	UserPermissions,
